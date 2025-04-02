@@ -1,0 +1,12 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 20  # 20 intentos de login por segundo
+scenarios:
+  - flow:
+      - post:
+          url: "/users/login"
+          json:
+            email: "test@example.com"
+            password: "segura123"
